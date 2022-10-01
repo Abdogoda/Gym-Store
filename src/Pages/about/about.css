@@ -1,0 +1,38 @@
+.about_container {
+  padding: 4rem 0;
+}
+.about_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin: 5rem auto;
+}
+.about_img {
+  width: 20rem;
+  max-width: 95%;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: var();
+  border-radius: 0.1rem;
+}
+.about_img img {
+  transition: var(--transition);
+}
+.about_img:hover img {
+  transform: scale(1.2);
+}
+.about_content p {
+  margin: 1rem 0;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+  max-width: 90%;
+}
+@media screen and (max-width: 600px) {
+  .about_content {
+    grid-template-columns: 1fr;
+  }
+  .about_content:nth-child(2) .about_img {
+    order: -1;
+  }
+}

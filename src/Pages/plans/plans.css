@@ -1,0 +1,44 @@
+.plans_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding: 4rem 0;
+}
+.plans_box {
+  text-align: center;
+  background-color: var(--color-primary-variant);
+  border-radius: 0 2rem 0 2rem;
+  padding: 2.5rem 1rem;
+}
+.plans_box p {
+  max-width: 80%;
+  margin: 1rem auto;
+  letter-spacing: 0.05rem;
+}
+.plans_box .plans_price {
+  color: var(--color-primary);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.plans_box .plans_price h2 {
+  margin-left: -0.2rem;
+  color: var(--color-gray-300);
+}
+.plans_box .color_white {
+  color: var(--color-white);
+}
+.plans_box p:last-of-type {
+  margin-bottom: 2rem;
+}
+@media screen and (max-width: 772px) {
+  .plans_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 500px) {
+  .plans_container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

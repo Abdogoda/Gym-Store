@@ -1,0 +1,154 @@
+nav {
+  width: 100%;
+  height: 4.3rem;
+  padding: 0.7rem 0;
+  background-color: var(--color-primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+nav .container {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  color: #fff;
+}
+.logo span {
+  margin: 0;
+  color: var(--color-secondary);
+}
+nav .link_list_con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+nav .link_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+nav .link_list a {
+  position: relative;
+  letter-spacing: 0.1rem;
+  color: #fff;
+  transition: var(--transition);
+}
+nav .link_list a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -3.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 1rem;
+  border-style: solid;
+  border-color: var(--color-primary) transparent transparent transparent;
+}
+nav .link_list a:hover,
+nav .link_list a.active {
+  color: var(--color-secondary);
+}
+nav .toggle {
+  position: relative;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  display: none;
+}
+nav .toggle span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-white);
+  z-index: 1;
+}
+nav .toggle span:first-child {
+  top: 0;
+  transition: var(--transition);
+}
+nav .toggle span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+nav .toggle span:last-child {
+  bottom: 0;
+  transition: var(--transition);
+}
+nav .toggle:hover span {
+  background-color: var(--color-secondary);
+}
+nav .toggle.active {
+  transform: translateX(-13px);
+}
+nav .toggle.active span:first-child {
+  transform: rotate(45deg) translateX(13px);
+  background-color: var(--color-secondary);
+}
+nav .toggle.active span:nth-child(2) {
+  visibility: hidden;
+}
+nav .toggle.active span:last-child {
+  transform: rotate(-45deg) translateX(13px);
+  background-color: var(--color-secondary);
+}
+.react-switch-bg {
+  width: 3rem !important;
+  height: 1.5rem !important;
+  background-color: var(--color-secondary) !important;
+}
+.react-switch-bg div {
+  width: calc(1.5rem - 2px) !important;
+  height: calc(100% - 2px) !important;
+}
+.react-switch-handle {
+  width: calc(1.5rem - 2px) !important;
+  height: calc(100% - 2px) !important;
+  background-color: #fff !important;
+}
+/* media queries */
+@media screen and (max-width: 1248px) {
+  nav .link_list {
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  nav .link_list {
+    display: none;
+  }
+  nav .link_list.active {
+    display: flex !important;
+    position: absolute;
+    top: calc(100% + 0.1rem);
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    width: var(--container-width-ms);
+    gap: 0.1rem;
+  }
+  nav .link_list.active a {
+    background-color: var(--color-primary-variant);
+    width: 100%;
+    padding: 0.7rem;
+  }
+  nav .link_list.active a:hover {
+    background-color: var(--color-primary);
+    transform: translateX(5px);
+  }
+  nav .link_list.active a.active::after {
+    display: none;
+  }
+  .toggle {
+    display: block !important;
+  }
+}
